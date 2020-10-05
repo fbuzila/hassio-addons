@@ -6,7 +6,7 @@
 
 * This addon requires a MQTT broker to pass state and commands to Screenlogic.
 
-* Add repository to your addons and install: https://github.com/bwoodworth/hassio-addons
+* Add repository to your addons and install: https://github.com/fbuzila/hassio-addons
 
 * Set config options:
   
