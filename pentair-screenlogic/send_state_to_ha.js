@@ -15,6 +15,7 @@ function connect(client) {
     this.getPoolStatus();
   }).on('poolStatus', function(status) {
     //this.getChemicalData();
+    this.getSaltCellConfig();
     console.log('pentair/pooltemp/state,' + status.currentTemp[0]);
     try { console.log('pentair/spatemp/state,' + status.currentTemp[1]); } catch {}
     console.log('pentair/airtemp/state,' + status.airTemp);

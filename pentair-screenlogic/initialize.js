@@ -18,6 +18,7 @@ function connect(client) {
   }).on('poolStatus', function(status) {
 	  //console.log(JSON.stringify(status, undefined, 4));
    //this.getChemicalData();
+    this.getSaltCellConfig();
     console.log(' pool ok=' + status.ok);
     console.log(' pool active=' + status.isPoolActive());
     console.log(' pool temp=' + status.currentTemp[0]);

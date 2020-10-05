@@ -8,3 +8,6 @@
 
 ## 1.2
 - removed ChemicalData related code
+
+## 1.3
+- add salt configs
