@@ -53,29 +53,29 @@ function connect(client) {
     console.log('pentair/calcium/state,' + chemData.calcium);
     console.log('pentair/cyanuricacid/state,' + chemData.cyanuricAcid);
     console.log('pentair/alkalinity/state,' + chemData.alkalinity);
-  }).on('controllerConfig', function(config) {
+//  }).on('controllerConfig', function(config) {
     //this.getPumpStatus(pumpID);
-    var i;
-    for(i = 0; i < config.pumpCircArray.length; i++)
-    {
-      if (config.pumpCircArray[i] != 0)
-      {
-        numPumps++;
-      }
-    }
-  }).on('getPumpStatus', function(status) {
-    console.log('pentair/pump/'+pumpID+'/watts/state,' + status.pumpWatts);
-    console.log('pentair/pump/'+pumpID+'/rpm/state,' + status.pumpRPMs);
-    console.log('pentair/pump/'+pumpID+'/gpm/state,' + status.pumpGPMs);
-    if (pumpID < numPumps-1)
-    {
-      pumpID = pumpID + 1;
-      this.getPumpStatus(pumpID);
-    }
-    else
-    {
-      this.getSaltCellConfig();
-    }
+//    var i;
+//    for(i = 0; i < config.pumpCircArray.length; i++)
+//    {
+//      if (config.pumpCircArray[i] != 0)
+//      {
+//        numPumps++;
+//      }
+//    }
+//  }).on('getPumpStatus', function(status) {
+//    console.log('pentair/pump/'+pumpID+'/watts/state,' + status.pumpWatts);
+//    console.log('pentair/pump/'+pumpID+'/rpm/state,' + status.pumpRPMs);
+//    console.log('pentair/pump/'+pumpID+'/gpm/state,' + status.pumpGPMs);
+//    if (pumpID < numPumps-1)
+//    {
+//      pumpID = pumpID + 1;
+//      this.getPumpStatus(pumpID);
+//    }
+//    else
+//    {
+//      this.getSaltCellConfig();
+//    }
   }).on('saltCellConfig', function(saltCellConfig) {
     console.log('pentair/saltcellstatus/state,' + saltCellConfig.status);
     console.log('pentair/saltcelllevel1/state,' + saltCellConfig.level1);

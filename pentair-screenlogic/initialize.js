@@ -60,46 +60,46 @@ function connect(client) {
     console.log(' calcium=' + chemData.calcium);
     console.log(' cyanuric acid=' + chemData.cyanuricAcid);
     console.log(' alkalinity=' + chemData.alkalinity);
-  }).on('controllerConfig', function(config) {
-    this.getPumpStatus(pumpID);
-    console.log(' controller is in celsius=' + config.degC);
-    console.log(' controllerId=' + config.controllerId);
-    console.log(' pumpCircArray=' + config.pumpCircArray);
-    console.log(' Number of bodyArray Objects=' + config.bodyArray.length);
-    console.log(' bodyArray=');
-    var i;
-    for(i = 0; i < config.bodyArray.length; i++)
-    {
-      console.log('   circuitId: ' + config.bodyArray[i].circuitId);
-      console.log('     name: ' + config.bodyArray[i].name);
-    }
-    for(i = 0; i < config.pumpCircArray.length; i++)
-    {
-      if (config.pumpCircArray[i] != 0)
-      {
-        numPumps++;
-      }
-    }
-    console.log('numPumps=' + numPumps);
-  }).on('getPumpStatus', function(status) {
-    console.log(' pumpID '+pumpID+' watts=' + status.pumpWatts);
-    console.log(' pumpID '+pumpID+' rpms=' + status.pumpRPMs);
-    console.log(' pumpID '+pumpID+' gpms=' + status.pumpGPMs);
-    if (pumpID < numPumps-1)
-    {
-      pumpID = pumpID + 1;
-      this.getPumpStatus(pumpID);
-    }
-    else
-    {
-      this.getSaltCellConfig();
-    }
+//  }).on('controllerConfig', function(config) {
+//    this.getPumpStatus(pumpID);
+//    console.log(' controller is in celsius=' + config.degC);
+//    console.log(' controllerId=' + config.controllerId);
+//    console.log(' pumpCircArray=' + config.pumpCircArray);
+//    console.log(' Number of bodyArray Objects=' + config.bodyArray.length);
+//    console.log(' bodyArray=');
+//    var i;
+//    for(i = 0; i < config.bodyArray.length; i++)
+//    {
+//      console.log('   circuitId: ' + config.bodyArray[i].circuitId);
+//      console.log('     name: ' + config.bodyArray[i].name);
+//    }
+//    for(i = 0; i < config.pumpCircArray.length; i++)
+//    {
+//      if (config.pumpCircArray[i] != 0)
+//      {
+//        numPumps++;
+//      }
+//    }
+//    console.log('numPumps=' + numPumps);
+//  }).on('getPumpStatus', function(status) {
+//    console.log(' pumpID '+pumpID+' watts=' + status.pumpWatts);
+//    console.log(' pumpID '+pumpID+' rpms=' + status.pumpRPMs);
+//    console.log(' pumpID '+pumpID+' gpms=' + status.pumpGPMs);
+//    if (pumpID < numPumps-1)
+//    {
+//      pumpID = pumpID + 1;
+//      this.getPumpStatus(pumpID);
+//    }
+//    else
+//    {
+//      this.getSaltCellConfig();
+//    }
   }).on('saltCellConfig', function(saltCellConfig) {
     console.log(' salt cell installed=' + saltCellConfig.installed);
     console.log(' salt cell satus=' + saltCellConfig.status);
     console.log(' salt cell level 1=' + saltCellConfig.level1);
     console.log(' salt cell level 2=' + saltCellConfig.level2);
-    
+
     console.log('CLOSING CONNECTION')
     client.close();
   });
