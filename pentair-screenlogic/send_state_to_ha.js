@@ -14,7 +14,7 @@ function connect(client) {
   }).on('version', function(version) {
     this.getPoolStatus();
   }).on('poolStatus', function(status) {
-    this.getChemicalData();
+    //this.getChemicalData();
     console.log('pentair/pooltemp/state,' + status.currentTemp[0]);
     try { console.log('pentair/spatemp/state,' + status.currentTemp[1]); } catch {}
     console.log('pentair/airtemp/state,' + status.airTemp);
@@ -48,11 +48,11 @@ function connect(client) {
     {
       console.log('pentair/circuit/' + status.circuitArray[i].id + '/state,' + (status.circuitArray[i].state ? 'ON' : 'OFF'));
     }
-  }).on('chemicalData', function(chemData) {
-    this.getControllerConfig();
-    console.log('pentair/calcium/state,' + chemData.calcium);
-    console.log('pentair/cyanuricacid/state,' + chemData.cyanuricAcid);
-    console.log('pentair/alkalinity/state,' + chemData.alkalinity);
+//  }).on('chemicalData', function(chemData) {
+//    this.getControllerConfig();
+//    console.log('pentair/calcium/state,' + chemData.calcium);
+//    console.log('pentair/cyanuricacid/state,' + chemData.cyanuricAcid);
+//    console.log('pentair/alkalinity/state,' + chemData.alkalinity);
 //  }).on('controllerConfig', function(config) {
     //this.getPumpStatus(pumpID);
 //    var i;

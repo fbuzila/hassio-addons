@@ -17,7 +17,7 @@ function connect(client) {
     console.log(' version=' + version.version);
   }).on('poolStatus', function(status) {
 	  //console.log(JSON.stringify(status, undefined, 4));
-    this.getChemicalData();
+   //this.getChemicalData();
     console.log(' pool ok=' + status.ok);
     console.log(' pool active=' + status.isPoolActive());
     console.log(' pool temp=' + status.currentTemp[0]);
@@ -55,11 +55,11 @@ function connect(client) {
     console.log(' freezeMode=' + status.freezeMode);
     console.log(' alarms=' + status.alarms);
     console.log(' Number of circuitArray Objects=' + status.circuitArray.length);
-  }).on('chemicalData', function(chemData) {
-    this.getControllerConfig();
-    console.log(' calcium=' + chemData.calcium);
-    console.log(' cyanuric acid=' + chemData.cyanuricAcid);
-    console.log(' alkalinity=' + chemData.alkalinity);
+//  }).on('chemicalData', function(chemData) {
+//    this.getControllerConfig();
+//    console.log(' calcium=' + chemData.calcium);
+//    console.log(' cyanuric acid=' + chemData.cyanuricAcid);
+//    console.log(' alkalinity=' + chemData.alkalinity);
 //  }).on('controllerConfig', function(config) {
 //    this.getPumpStatus(pumpID);
 //    console.log(' controller is in celsius=' + config.degC);

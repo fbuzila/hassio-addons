@@ -5,3 +5,6 @@
 
 ## 1.1
 - removed the pump code
+
+## 1.2
+- removed ChemicalData related code
